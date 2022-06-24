@@ -1,16 +1,26 @@
 :root {
     --footer-height: 70px;
     --color001: #222; /*header and footer bg*/
-    --color002: #666; /*Main titles h1/h2*/
+    --color002: #666; /*Main titles h1/h2 and links*/
     --color003: #aaa; /*Dark title / footer and header link color*/
     --color004: #ddd; /*Light title / footer text color*/
     --color005: #333; /*Header nav bg*/
+    --color006: #444; /*Header nav link hovered bg*/
+    --color007: #eee; /*main link bg*/
+    --color008: #ccc; /*main link border*/
+    --color009: #FFB63E; /*Quoted text color*/
 }
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-touch-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -40,7 +50,7 @@ header h2 {
 header + nav {
     width: 100vw;
     height: 3em;
-    margin: 0 0 0 -10px;
+    margin: -1px 0 0 -10px;
     background: var(--color005);
 }
 
@@ -50,16 +60,22 @@ header + nav ul {
 }
 
 header + nav li {
-    height: 3em;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
+    display: inline;
 }
 
 header + nav a {
+    height: 3em;
+    padding: 10px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     color: var(--color003);
     text-decoration: none;
+    transition: 0.2s;
+}
+
+header + nav a:hover {
+    background: var(--color006);
 }
 
 main {
@@ -71,6 +87,7 @@ main h1, main h2 {
 }
 
 main p {
+    line-height: 1.7em;
     padding-bottom: 10px;
     text-indent: 10px;
 }
@@ -78,13 +95,52 @@ main p {
 main img {
     max-width: calc(100vw - 40px);
     display: block;
-    margin: auto;
+    margin: 5px auto 5px auto;
 }
 
 .inline-image-icon {
     width: 0.8em;
     height: 0.8em;
     display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+main ul, main ol {
+    list-style: none;
+}
+
+main ul > li::before {
+    content: '-';
+    margin-left: 10px;
+}
+
+main a {
+    padding-inline: 3px;
+    margin-inline: 2px;
+    background: var(--color007);
+    color: var(--color002);
+    text-decoration: none;
+    border: 1px solid var(--color008);
+    border-radius: 2px;
+}
+
+main a:hover {
+    text-decoration: underline;
+}
+
+main a[target="_blank"]::before {
+    content: '\1F4CC';
+    margin-right: 5px;
+}
+
+main q {
+    padding: 10px;
+    color: var(--color009);
+}
+
+main sub {
+    color: var(--color002);
 }
 
 main aside {
