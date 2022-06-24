@@ -162,22 +162,20 @@ footer {
     color: var(--color004);
 }
 
-footer nav, footer ul {
-    width: calc(100vw - 20px);
-    list-style: none;
-}
-
-footer li {
-    width: calc(50% - 10px); /*10px de margin para cada lado*/
-    height: 1em;
-    display: inline-block; 
-    text-align: center;
-    transition: 0.5s;
-}
-
 footer a {
     color: var(--color003);
     text-decoration: none;
+}
+
+footer > a {
+    width: 100%;
+    display: block;
+    text-align: center;
+    transition: 0.2s;
+}
+
+footer > a:hover {
+    background: var(--color006);
 }
 
 footer p {
