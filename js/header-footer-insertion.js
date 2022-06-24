@@ -1,10 +1,11 @@
 var ajax = new XMLHttpRequest()
 
-load("[HEADER]", "header.html")
-load("[FOOTER]", "footer.html")
+load('[HEADER]', 'header.html')
+document.querySelector('#header-subtitle').textContent = document.title
+load('[FOOTER]', 'footer.html')
 
 function load(mark, html) {
-    ajax.open("GET", html, false)
+    ajax.open('GET', html, false)
     ajax.onreadystatechange = function() {
         if (ajax.readyState == XMLHttpRequest.DONE) {
             if (ajax.status == 200) {

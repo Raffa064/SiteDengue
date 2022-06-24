@@ -1,0 +1,132 @@
+:root {
+    --footer-height: 70px;
+    --color001: #222; /*header and footer bg*/
+    --color002: #666; /*Main titles h1/h2*/
+    --color003: #aaa; /*Dark title / footer and header link color*/
+    --color004: #ddd; /*Light title / footer text color*/
+    --color005: #333; /*Header nav bg*/
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    padding: 10px;
+    padding-bottom: var(--footer-height);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header *, main *, footer * {
+    max-width: calc(100vw - 20px);
+}
+
+header {
+    width: 100vw;
+    padding: 10px;
+    margin: -10px 0 0 -10px;
+    background: var(--color001);
+}
+
+header h1 {
+    color: var(--color004);
+}
+
+header h2 {
+    color: var(--color003);
+}
+
+header + nav {
+    width: 100vw;
+    height: 3em;
+    margin: 0 0 0 -10px;
+    background: var(--color005);
+}
+
+header + nav ul {
+    width: 100vw;
+    list-style: none;
+}
+
+header + nav li {
+    height: 3em;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+header + nav a {
+    color: var(--color003);
+    text-decoration: none;
+}
+
+main {
+    padding: 10px;
+}
+
+main h1, main h2 {
+    color: var(--color002);
+}
+
+main p {
+    padding-bottom: 10px;
+    text-indent: 10px;
+}
+
+main img {
+    display: block;
+    margin: auto;
+}
+
+.inline-image-icon {
+    width: 0.8em;
+    height: 0.8em;
+    display: inline-block;
+}
+
+main aside {
+    padding: 10px;
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+footer {
+    width: 100vw;
+    height: var(--footer-height);
+    padding: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: var(--color001);
+    color: var(--color004);
+}
+
+footer nav, footer ul {
+    width: 100vw;
+    list-style: none;
+}
+
+footer li {
+    width: calc(50% - 10px); /*10px de margin para cada lado*/
+    height: 1em;
+    display: inline-block; 
+    text-align: center;
+    transition: 0.5s;
+}
+
+footer a {
+    color: var(--color003);
+    text-decoration: none;
+}
+
+footer p {
+    text-align: center;
+}
